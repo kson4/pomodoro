@@ -1,0 +1,59 @@
+.form {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.entry-durations {
+  display: flex;
+  justify-content: space-evenly;
+}
+.entry-durations input {
+  width: 50px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .header {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.input {
+  display: flex;
+  gap: 5px;
+}
+
+.input input {
+  width: 40px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

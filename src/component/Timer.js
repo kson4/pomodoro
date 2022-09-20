@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import Form from "./Form"
+import "./Timer.css"
 
-function Timer({pDuration, sDuration, lDuration}) {
+function Timer({pDuration, sDuration, lDuration, subject}) {
   const [time, setTime] = useState()
   const [start, setStart] = useState(false)
 
@@ -23,21 +24,24 @@ function Timer({pDuration, sDuration, lDuration}) {
   }, [start])
 
   return (
-    <div>
-      <div className="current-time">
-        <span>{Math.floor(time / 60)}</span>
-      <span>:</span>
-      <span>{time % 60}</span>
-      </div>
-      <div className="buttons">
-        {!start && (
-          <button onClick={() => setStart(true)}>Start</button>
-        )}
+    <div className="container">
+      <div className="clock">
+        <div className="current-time">
+          <span>{Math.floor(time / 60)}</span>
+          <span>:</span>
+          <span>{("0" + (time % 60)).slice(-2)}</span>
+        </div>
+        <div className="buttons">
+          {!start && (
+            <button onClick={() => setStart(true)}>Start</button>
+          )}
 
-        {start && (
-          <button onClick={() => setStart(false)}>Pause</button>
-        )}
+          {start && (
+            <button onClick={() => setStart(false)}>Pause</button>
+          )}
+        </div>
       </div>
+      
     </div>
   )
 }

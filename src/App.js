@@ -6,8 +6,8 @@ import "./App.css"
 function App() {
   return (
     <div className="App">
-      <StartForm />
-      {/* <Form /> */}
+      {/* <StartForm /> */}
+      <Form />
       {/* <Timer /> */}
     </div>
   );
