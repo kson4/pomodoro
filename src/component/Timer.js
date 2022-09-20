@@ -7,7 +7,6 @@ function Timer({pDuration, sDuration, lDuration}) {
 
   useEffect(() => {
     setTime(pDuration * 60)
-    console.log("ON START")
   }, [])
 
   useEffect(() => {
@@ -15,7 +14,6 @@ function Timer({pDuration, sDuration, lDuration}) {
     if (start) {
       interval = setInterval(() => {
         setTime(time => time - 1)
-        console.log(time)
       }, 100)
     } 
     else {
