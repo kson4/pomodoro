@@ -24,7 +24,7 @@ function Timer({pDuration, sDuration, lDuration, subject}) {
   }, [start])
 
   return (
-    <div className="clock-container c-shadow">
+    <div className="clock-container container c-shadow">
       <div className="clock">
         <div className="current">
           <p className="text">Session: 1 of 4</p>

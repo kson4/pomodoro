@@ -1,16 +1,41 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { set, useForm } from "react-hook-form"
 
 import Timer from "./Timer"
 import "./Form.css"
 
-function Form() {
+function Form({ showForm }) {
   const {register, handleSubmit, formState: { errors } } = useForm()
   const [pDuration, setPDuration] = useState(25)
   const [sDuration, setSDuration] = useState(5)
   const [lDuration, setLDuration] = useState(15)
   const [subject, setSubject] = useState("")
   const [activateTimer, setActivateTimer] = useState(false)
+
+  const isInitialMount = useRef(true)
+  // useEffect(() => {
+  //   if (isInitialMount.current) {
+  //     isInitialMount.current = false
+  //   } else {
+  //     useEffect(() => {
+  //       setActivateTimer(true)
+  //       // console.log(showForm)
+  //     },[showForm])
+  //   }
+  // })
+
+  // useEffect(() => {
+  //   console.log(isInitialMount)
+  //   if (isInitialMount.current) {
+  //     isInitialMount.current = false;
+  //   } else {
+  //     setActivateTimer(showForm)
+  //   }
+  //   // console.log(showForm)
+    
+  // }, showForm);
+
+  
 
   const onSubmit = (data) => {
     if (data.pDuration !== "") {
@@ -25,6 +50,8 @@ function Form() {
     setSubject(data.subject)
     setActivateTimer(true)
   }
+
+  
 
   return (
     <div>
@@ -72,14 +99,14 @@ function Form() {
         </div>
         
       )}
-      {activateTimer && (
+      {/* {activateTimer && (
         <Timer 
           pDuration={pDuration}
           sDuration={sDuration}
           lDuration={lDuration}
           subject={subject}
         />
-      )}
+      )} */}
     </div>
   )
 }

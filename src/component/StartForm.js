@@ -1,11 +1,16 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquare, faSquarePlus } from "@fortawesome/free-solid-svg-icons"
 
 import Form from "./Form"
 
-function StartForm() {
+function StartForm({ showForm, setShowForm }) {
   const [form, setForm] = useState(false)
+
+  // useEffect(() => {
+  //   console.log(form)
+  //   setShowForm(form)
+  // }, [form])
 
   return (
     <div className="start">
@@ -13,7 +18,7 @@ function StartForm() {
         <button onClick={() => setForm(true)}>Add New Timer</button>
       )}
       {form && (
-        <Form />
+        <Form startForm={form}/>
       )}
     </div>
   )

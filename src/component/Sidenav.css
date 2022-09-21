@@ -9,6 +9,10 @@
   padding-top: 20px;
   background-color: #FFD1D1;
   color: #FF9494;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {

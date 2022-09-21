@@ -2,12 +2,20 @@ import React from "react"
 import StartForm from "./StartForm"
 import "./Sidenav.css"
 
-function Sidenav() {
+function Sidenav({ setShowForm }) {
+
+  // function showForm(setShowForm) {
+
+  // }
+
   return (
     <div className="sidenav">
       
       <p className="title">Current Sessions</p>
-      <StartForm />
+      <div>
+        <StartForm onClick={() => setShowForm(true) }/>
+      </div>
+      
     </div>
   )
 }
