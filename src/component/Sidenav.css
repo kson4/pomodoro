@@ -1,0 +1,19 @@
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  background-color: #FFD1D1;
+  color: #FF9494;
+}
+
+.title {
+  color: gray;
+  text-align: center;
+  /* text-shadow: 1px 0 gray, -1px 0 gray, 0 1px gray, 0 -1px gray,
+               1px 1px gray, -1px -1px gray, 1px -1px gray, -1px 1px gray; */
+}

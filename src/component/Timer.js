@@ -24,20 +24,24 @@ function Timer({pDuration, sDuration, lDuration, subject}) {
   }, [start])
 
   return (
-    <div className="container">
+    <div className="clock-container c-shadow">
       <div className="clock">
+        <div className="current">
+          <p className="text">Session: 1 of 4</p>
+          <p className="text">Current: Pomodoro</p>
+        </div>
         <div className="current-time">
           <span>{Math.floor(time / 60)}</span>
           <span>:</span>
           <span>{("0" + (time % 60)).slice(-2)}</span>
         </div>
-        <div className="buttons">
+        <div>
           {!start && (
-            <button onClick={() => setStart(true)}>Start</button>
+            <button className="buttons" onClick={() => setStart(true)}>Start</button>
           )}
 
           {start && (
-            <button onClick={() => setStart(false)}>Pause</button>
+            <button className="buttons" onClick={() => setStart(false)}>Pause</button>
           )}
         </div>
       </div>

@@ -8,7 +8,7 @@ function StartForm() {
   const [form, setForm] = useState(false)
 
   return (
-    <div>
+    <div className="start">
       {!form && (
         <button onClick={() => setForm(true)}>Add New Timer</button>
       )}

@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { set, useForm } from "react-hook-form"
 
 import Timer from "./Timer"
-// import "./Form.css"
 import "./Form.css"
 
 function Form() {
@@ -30,49 +29,48 @@ function Form() {
   return (
     <div>
       {!activateTimer && (
-        <div className="form">
-          
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="header">Setup New Pomodoro</div>
-            <span>Time (minutes)</span>
+        <div className="container form c-shadow">
+          <div className="form">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="header text">Setup New Pomodoro</div>
+              <hr></hr>
+              <div className="subject text">
+                <span>Subject:</span>
+                <input type="text" placeHolder="Default: None" {...register("subject")} />
+              </div>
+              <span className="text">Time (minutes)</span>
+              <div className="entry-durations">
+                <div className="entry text">
+                  <span>Pomodoro </span>
+                  <div className="input">
+                    <input type="number" defaultValue={"25"} {...register("pDuration", { min: 1 })} />
+                  </div>
+                </div>
 
-            <div className="subject">
-              <span>Subject:</span>
-              <input type="text" placeHolder="Math" {...register("subject")} />
-            </div>
+                <div className="entry text">
+                  <span>Short Break </span>
+                  <div className="input">
+                    <input type="number" defaultValue={"5"} {...register("sDuration", { min: 0 })} />
+                  </div>
+                </div>
 
-            <div className="entry-durations">
-              <div className="entry">
-                <span>Pomodoro </span>
-                <div className="input">
-                  <input type="number" placeholder="25" {...register("pDuration", { min: 1 })} />
+                <div className="entry text">
+                  <span>Long Break </span>
+                  <div className="input">
+                    <input type="number" defaultValue={"15"} {...register("lDuration", { min: 0 })} />
+                  </div>
                 </div>
               </div>
 
-              <div className="entry">
-                <span>Short Break </span>
-                <div className="input">
-                  <input type="number" placeholder="5" {...register("sDuration", { min: 0 })} />
-                </div>
+              <div className="submit">
+                <input className="submit-button bg-shadow" type="submit" value="Start" />
               </div>
-
-              <div className="entry">
-                <span>Long Break </span>
-                <div className="input">
-                  <input type="number" placeholder="15" {...register("lDuration", { min: 0 })} />
-                </div>
-              </div>
-            </div>
-
-            
-
-            <div className="submit">
-              <input className="submitt" type="submit" />
-            </div>
-            
-          </form>
-          {errors.pomodoroDuration && <p>Pomodoro Duration must be at least one minute</p>}
+              
+            </form>
+            {errors.pomodoroDuration && <p>Pomodoro Duration must be at least one minute</p>}
+          </div>
         </div>
+        
       )}
       {activateTimer && (
         <Timer 
